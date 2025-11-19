@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+
+<body>
+    <script>
+        function data() {
+            var a = document.getElementById("n1").value;
+            var b = document.getElementById("n2").value;
+            var c = document.getElementById("n3").value;
+            var d = document.getElementById("n4").value;
+
+            if (a == "" || b == "" || c == "" || d == "") {
+                alert("All field must be filled out");
+                return false;
+            }
+            else if (b.length < 10 || b.length > 10) {
+                alert("Number must be 10 digits ! Please enter valid contact number");
+                return false;
+            }
+            else if (isNaN(b)) {
+                alert("Only numbers are allowed ! Please enter valid contact number");
+                return false;
+            }
+            else if (c!=d) {
+                alert("Please enter same password in both fields");
+                return false;
+            }
+            else {
+                true;
+
+            }
+
+        }
+    </script>
+
+    <form onsubmit="return data()" action="submit.html">
+        UserId: <br> <input type="text" id="n1"><br>
+        Contact: <br><input type="text" id="n2"><br>
+        Password: <br><input type="password" id="n3"><br>
+        Confirm Password: <br> <input type="password" id="n4">
+        <br><br>
+        <input type="submit" value="Submit your form">
+    </form>
+</body>
+
+</html>
